@@ -45,7 +45,9 @@ namespace SupervisorFuzzyMicro
             this.button9 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.pnlLateral.SuspendLayout();
+            this.pnlCentro.SuspendLayout();
             this.SuspendLayout();
             // 
             // portaSerial
@@ -76,6 +78,7 @@ namespace SupervisorFuzzyMicro
             // pnlCentro
             // 
             this.pnlCentro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnlCentro.Controls.Add(this.listBox1);
             this.pnlCentro.Location = new System.Drawing.Point(193, 23);
             this.pnlCentro.Name = "pnlCentro";
             this.pnlCentro.Size = new System.Drawing.Size(595, 415);
@@ -201,6 +204,16 @@ namespace SupervisorFuzzyMicro
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Lista dos dados recebidos"});
+            this.listBox1.Location = new System.Drawing.Point(72, 50);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(436, 303);
+            this.listBox1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +224,7 @@ namespace SupervisorFuzzyMicro
             this.Name = "Form1";
             this.Text = "Form1";
             this.pnlLateral.ResumeLayout(false);
+            this.pnlCentro.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -232,6 +246,7 @@ namespace SupervisorFuzzyMicro
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
