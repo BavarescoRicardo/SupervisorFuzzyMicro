@@ -16,8 +16,14 @@ namespace SupervisorFuzzyMicro
             {
                 return;                
             }
+            // Declaracao das variaveis utilizadas pelo supervisonamento
+            String rpm;
 
             MessageBox.Show("Rodando");
+            rpm = portaS.ReadLine();
+
+            MessageBox.Show(rpm);
+
         }
     }
 }
