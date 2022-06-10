@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace SupervisorFuzzyMicro
 {
-    public partial class Form1 : Form
+    public partial class Form : System.Windows.Forms.Form
     {
-        public Form1()
+        Monitoramento monitoramento = new Monitoramento();
+        public Form()
         {
             InitializeComponent();
         }
@@ -115,6 +116,11 @@ namespace SupervisorFuzzyMicro
             {
                 portaSerial.Close();
             }
+        }
+
+        private void btnMon_Click(object sender, EventArgs e)
+        {
+            monitoramento.leitura(portaSerial);
         }
     }
 }
