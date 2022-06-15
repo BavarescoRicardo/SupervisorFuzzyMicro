@@ -48,6 +48,9 @@ namespace SupervisorFuzzyMicro
             this.btnInicio = new System.Windows.Forms.Button();
             this.pnlCentro = new System.Windows.Forms.Panel();
             this.listaDadosPic = new System.Windows.Forms.ListBox();
+            this.pnlTransparente = new System.Windows.Forms.Panel();
+            this.btnAumenta = new System.Windows.Forms.Button();
+            this.btnSet = new System.Windows.Forms.Button();
             this.pnlLateral.SuspendLayout();
             this.pnlCentro.SuspendLayout();
             this.SuspendLayout();
@@ -213,6 +216,9 @@ namespace SupervisorFuzzyMicro
             this.pnlCentro.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlCentro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pnlCentro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlCentro.BackgroundImage")));
+            this.pnlCentro.Controls.Add(this.btnSet);
+            this.pnlCentro.Controls.Add(this.btnAumenta);
+            this.pnlCentro.Controls.Add(this.pnlTransparente);
             this.pnlCentro.Controls.Add(this.listaDadosPic);
             this.pnlCentro.Location = new System.Drawing.Point(193, 23);
             this.pnlCentro.Name = "pnlCentro";
@@ -228,6 +234,33 @@ namespace SupervisorFuzzyMicro
             this.listaDadosPic.Name = "listaDadosPic";
             this.listaDadosPic.Size = new System.Drawing.Size(118, 329);
             this.listaDadosPic.TabIndex = 0;
+            // 
+            // pnlTransparente
+            // 
+            this.pnlTransparente.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTransparente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTransparente.Location = new System.Drawing.Point(185, 47);
+            this.pnlTransparente.Name = "pnlTransparente";
+            this.pnlTransparente.Size = new System.Drawing.Size(166, 70);
+            this.pnlTransparente.TabIndex = 1;
+            // 
+            // btnAumenta
+            // 
+            this.btnAumenta.Location = new System.Drawing.Point(45, 83);
+            this.btnAumenta.Name = "btnAumenta";
+            this.btnAumenta.Size = new System.Drawing.Size(75, 23);
+            this.btnAumenta.TabIndex = 2;
+            this.btnAumenta.Text = "Aumenta";
+            this.btnAumenta.UseVisualStyleBackColor = true;
+            // 
+            // btnSet
+            // 
+            this.btnSet.Location = new System.Drawing.Point(45, 155);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(75, 23);
+            this.btnSet.TabIndex = 3;
+            this.btnSet.Text = "Definir";
+            this.btnSet.UseVisualStyleBackColor = true;
             // 
             // Form
             // 
@@ -263,6 +296,9 @@ namespace SupervisorFuzzyMicro
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.ListBox listaDadosPic;
         private System.Windows.Forms.Button btnMon;
+        private System.Windows.Forms.Panel pnlTransparente;
+        private System.Windows.Forms.Button btnSet;
+        private System.Windows.Forms.Button btnAumenta;
     }
 }
 
