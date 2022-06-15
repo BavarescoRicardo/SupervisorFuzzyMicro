@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,6 +25,7 @@ namespace SupervisorFuzzyMicro
             if (!portaSerial.IsOpen)
             {
                 portaSerial.Open();
+                MessageBox.Show("Rodando");
             }            
             //MessageBox.Show(charPic.ToString());
             
@@ -115,12 +117,25 @@ namespace SupervisorFuzzyMicro
             if (portaSerial.IsOpen)
             {
                 portaSerial.Close();
+                MessageBox.Show("Encerrada");
             }
         }
 
         private void btnMon_Click(object sender, EventArgs e)
         {
-            monitoramento.leitura(portaSerial);
+            monitoramento.abrePorta(portaSerial);
+            // dispara uma nova thread para executar
+            Thread t = new Thread(printaLista);
+            t.Start();
+        }
+
+        private void printaLista()
+        {
+            while (portaSerial.IsOpen)
+            {
+                listaDadosPic.Items.Add(monitoramento.leitura());                
+                Thread.Sleep(2000);
+            }
         }
     }
 }

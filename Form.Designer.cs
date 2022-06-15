@@ -30,8 +30,10 @@ namespace SupervisorFuzzyMicro
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.portaSerial = new System.IO.Ports.SerialPort(this.components);
             this.pnlLateral = new System.Windows.Forms.Panel();
+            this.btnMon = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -45,8 +47,7 @@ namespace SupervisorFuzzyMicro
             this.button1 = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.pnlCentro = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnMon = new System.Windows.Forms.Button();
+            this.listaDadosPic = new System.Windows.Forms.ListBox();
             this.pnlLateral.SuspendLayout();
             this.pnlCentro.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +77,16 @@ namespace SupervisorFuzzyMicro
             this.pnlLateral.Name = "pnlLateral";
             this.pnlLateral.Size = new System.Drawing.Size(175, 415);
             this.pnlLateral.TabIndex = 0;
+            // 
+            // btnMon
+            // 
+            this.btnMon.Location = new System.Drawing.Point(4, 4);
+            this.btnMon.Name = "btnMon";
+            this.btnMon.Size = new System.Drawing.Size(164, 31);
+            this.btnMon.TabIndex = 12;
+            this.btnMon.Text = "Monitorar";
+            this.btnMon.UseVisualStyleBackColor = true;
+            this.btnMon.Click += new System.EventHandler(this.btnMon_Click);
             // 
             // button11
             // 
@@ -199,32 +210,24 @@ namespace SupervisorFuzzyMicro
             // 
             // pnlCentro
             // 
+            this.pnlCentro.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlCentro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnlCentro.Controls.Add(this.listBox1);
+            this.pnlCentro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlCentro.BackgroundImage")));
+            this.pnlCentro.Controls.Add(this.listaDadosPic);
             this.pnlCentro.Location = new System.Drawing.Point(193, 23);
             this.pnlCentro.Name = "pnlCentro";
-            this.pnlCentro.Size = new System.Drawing.Size(595, 415);
+            this.pnlCentro.Size = new System.Drawing.Size(595, 347);
             this.pnlCentro.TabIndex = 1;
             // 
-            // listBox1
+            // listaDadosPic
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.listaDadosPic.FormattingEnabled = true;
+            this.listaDadosPic.Items.AddRange(new object[] {
             "Lista dos dados recebidos"});
-            this.listBox1.Location = new System.Drawing.Point(72, 50);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(436, 303);
-            this.listBox1.TabIndex = 0;
-            // 
-            // btnMon
-            // 
-            this.btnMon.Location = new System.Drawing.Point(4, 4);
-            this.btnMon.Name = "btnMon";
-            this.btnMon.Size = new System.Drawing.Size(164, 31);
-            this.btnMon.TabIndex = 12;
-            this.btnMon.Text = "Monitorar";
-            this.btnMon.UseVisualStyleBackColor = true;
-            this.btnMon.Click += new System.EventHandler(this.btnMon_Click);
+            this.listaDadosPic.Location = new System.Drawing.Point(475, 7);
+            this.listaDadosPic.Name = "listaDadosPic";
+            this.listaDadosPic.Size = new System.Drawing.Size(118, 329);
+            this.listaDadosPic.TabIndex = 0;
             // 
             // Form
             // 
@@ -258,7 +261,7 @@ namespace SupervisorFuzzyMicro
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listaDadosPic;
         private System.Windows.Forms.Button btnMon;
     }
 }

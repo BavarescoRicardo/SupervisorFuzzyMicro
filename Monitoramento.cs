@@ -1,29 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace SupervisorFuzzyMicro
 {
     class Monitoramento
     {
-        public void leitura(SerialPort portaS)
+        SerialPort portaS;
+        public void abrePorta(SerialPort portaSe)
         {
-            if(!portaS.IsOpen)
-            {
-                return;                
-            }
-            // Declaracao das variaveis utilizadas pelo supervisonamento
-            String rpm;
+            this.portaS = portaSe;
+        }
+        public String leitura()
+        {
+            String rpm = null;                
+            rpm = portaS.ReadExisting();
 
-            MessageBox.Show("Rodando");
-            rpm = portaS.ReadLine();
-
-            MessageBox.Show(rpm);
-
+            return rpm;          
         }
     }
 }
