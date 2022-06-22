@@ -14,6 +14,8 @@ namespace SupervisorFuzzyMicro
     public partial class Form : System.Windows.Forms.Form
     {
         Monitoramento monitoramento = new Monitoramento();
+
+        char[] buffer = new char[3];
         public Form()
         {
             InitializeComponent();
@@ -133,9 +135,25 @@ namespace SupervisorFuzzyMicro
         {
             while (portaSerial.IsOpen)
             {
-                listaDadosPic.Items.Add(monitoramento.leitura());                
-                Thread.Sleep(2000);
+                // listaDadosPic.Items.Add(monitoramento.leitura());
+                buffer[0] = 'A';
+                buffer[1] = 'A';
+                buffer[2] = 'A';
+                portaSerial.Write(buffer, 0,1);
+                Thread.Sleep(200);
+                //MessageBox.Show(monitoramento.leitura());
+                if(listaDadosPic.Items.Count > 10)
+                {                    
+                    listaDadosPic.Invoke(new Action(() => listaDadosPic.Items.RemoveAt(0)));
+                }
+                listaDadosPic.Invoke(new Action(() => listaDadosPic.Items.Add(monitoramento.leitura())));
+
+                //listaDadosPic.Items.Add(monitoramento.leitura());
+
+
+
             }
         }
+
     }
 }
