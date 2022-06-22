@@ -15,6 +15,9 @@ namespace SupervisorFuzzyMicro
         }
         public String leitura()
         {
+            if (!portaS.IsOpen)
+                return "!";
+
             String rpm = null;                
             rpm = portaS.ReadExisting();
 
@@ -42,7 +45,7 @@ namespace SupervisorFuzzyMicro
             }
 
             // return rpm.Substring(5,15);
-            return "!!!";
+            return "!";
         }
     }
 }
