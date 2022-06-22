@@ -9,6 +9,8 @@ namespace SupervisorFuzzyMicro
     {
         int velocidade;
         int setado;
+        int delta;
+        int antigo;
         String mensagem;
         SerialPort portaS;
         public void abrePorta(SerialPort portaSe)
@@ -43,7 +45,12 @@ namespace SupervisorFuzzyMicro
                 velocidade = velocidade / 40;
 
                 setado = (buffer[6] << 8) + (buffer[7]);
-                mensagem = "Vel: " + velocidade.ToString() + " Set: " + setado.ToString();
+                delta = (buffer[9] << 8) + (buffer[10]);
+                
+                antigo= (buffer[12] << 8) + (buffer[13]);
+
+                mensagem = "Vel: " + velocidade.ToString() + " Set: " + setado.ToString() +
+                    " \n \n Delta: " + delta.ToString() + " \n Ant: " + antigo.ToString();
                 return mensagem;
             }
 
