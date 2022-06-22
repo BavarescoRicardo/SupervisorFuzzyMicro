@@ -7,7 +7,9 @@ namespace SupervisorFuzzyMicro
 {
     class Monitoramento
     {
-        int rotacao;
+        int velocidade;
+        int setado;
+        String mensagem;
         SerialPort portaS;
         public void abrePorta(SerialPort portaSe)
         {
@@ -18,8 +20,8 @@ namespace SupervisorFuzzyMicro
             if (!portaS.IsOpen)
                 return "!";
 
-            String rpm = null;                
-            rpm = portaS.ReadExisting();
+            String buffer = null;                
+            buffer = portaS.ReadExisting();
 
             // codigo do exemplo do supervisor 
 
@@ -35,14 +37,16 @@ namespace SupervisorFuzzyMicro
             //------------------------------------------------------------------------
 
             // Verificação e Validação do pacote de dados recebido.
-            if (rpm.Length > 4 && rpm[0] == '#' && rpm[1] == '$' && rpm[2] == ':')
+            if (buffer.Length > 4 && buffer[0] == '#' && buffer[1] == '$' && buffer[2] == ':')
             {
-                rotacao = (rpm[3] << 8) + (rpm[4]);
-                rotacao = rotacao / 40;
-                return rotacao.ToString();
+                velocidade = (buffer[3] << 8) + (buffer[4]);
+                velocidade = velocidade / 40;
+
+                setado = (buffer[6] << 8) + (buffer[7]);
+                mensagem = "Vel: " + velocidade.ToString() + " Set: " + setado.ToString();
+                return mensagem;
             }
 
-            // return rpm.Substring(5,15);
             return "!";
         }
     }

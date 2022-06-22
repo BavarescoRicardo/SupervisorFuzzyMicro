@@ -137,14 +137,14 @@ namespace SupervisorFuzzyMicro
                 buffer[0] = 'X';
                 portaSerial.Write(buffer, 0,1);
                 Thread.Sleep(200);
-                String velocidade = monitoramento.leitura();
-                if (listaDadosPic.Items.Count > 10)
+                String buffPic = monitoramento.leitura();
+                if (listaDadosPic.Items.Count > 15)
                 {                    
                     listaDadosPic.Invoke(new Action(() => listaDadosPic.Items.RemoveAt(0)));
                 }
-                if (velocidade.Length > 0 && velocidade != "!")
+                if (buffPic.Length > 0 && buffPic != "!")
                 {
-                    listaDadosPic.Invoke(new Action(() => listaDadosPic.Items.Add(velocidade)));
+                    listaDadosPic.Invoke(new Action(() => listaDadosPic.Items.Add(buffPic)));
                 }
 
             }
