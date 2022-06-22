@@ -38,7 +38,7 @@ namespace SupervisorFuzzyMicro
             if (rpm.Length > 4 && rpm[0] == '#' && rpm[1] == '$' && rpm[2] == ':')
             {
                 rotacao = (rpm[3] << 8) + (rpm[4]);
-
+                rotacao = rotacao / 40;
                 return rotacao.ToString();
             }
 
