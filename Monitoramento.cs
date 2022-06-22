@@ -32,7 +32,7 @@ namespace SupervisorFuzzyMicro
             //------------------------------------------------------------------------
 
             // Verificação e Validação do pacote de dados recebido.
-            if (rpm[0] == '#' && rpm[1] == '$' && rpm[2] == ':')
+            if (rpm.Length > 4 && rpm[0] == '#' && rpm[1] == '$' && rpm[2] == ':')
             {
                 // return rpm.Substring(2, 10);
 
@@ -42,7 +42,7 @@ namespace SupervisorFuzzyMicro
             }
 
             // return rpm.Substring(5,15);
-            return null;
+            return "!!!";
         }
     }
 }

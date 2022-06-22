@@ -258,9 +258,9 @@ namespace SupervisorFuzzyMicro
             this.listaDadosPic.FormattingEnabled = true;
             this.listaDadosPic.Items.AddRange(new object[] {
             "Lista dos dados recebidos"});
-            this.listaDadosPic.Location = new System.Drawing.Point(475, 7);
+            this.listaDadosPic.Location = new System.Drawing.Point(491, 7);
             this.listaDadosPic.Name = "listaDadosPic";
-            this.listaDadosPic.Size = new System.Drawing.Size(118, 186);
+            this.listaDadosPic.Size = new System.Drawing.Size(102, 186);
             this.listaDadosPic.TabIndex = 0;
             // 
             // Form

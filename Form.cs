@@ -15,7 +15,7 @@ namespace SupervisorFuzzyMicro
     {
         Monitoramento monitoramento = new Monitoramento();
 
-        char[] buffer = new char[3];
+        char[] buffer = new char[1];
         public Form()
         {
             InitializeComponent();
@@ -29,7 +29,6 @@ namespace SupervisorFuzzyMicro
                 portaSerial.Open();
                 MessageBox.Show("Rodando");
             }            
-            //MessageBox.Show(charPic.ToString());
             
         }
 
@@ -135,22 +134,18 @@ namespace SupervisorFuzzyMicro
         {
             while (portaSerial.IsOpen)
             {
-                // listaDadosPic.Items.Add(monitoramento.leitura());
-                buffer[0] = 'A';
-                buffer[1] = 'A';
-                buffer[2] = 'A';
+                buffer[0] = 'X';
                 portaSerial.Write(buffer, 0,1);
                 Thread.Sleep(200);
-                //MessageBox.Show(monitoramento.leitura());
-                if(listaDadosPic.Items.Count > 10)
+                String velocidade = monitoramento.leitura();
+                if (listaDadosPic.Items.Count > 10)
                 {                    
                     listaDadosPic.Invoke(new Action(() => listaDadosPic.Items.RemoveAt(0)));
                 }
-                listaDadosPic.Invoke(new Action(() => listaDadosPic.Items.Add(monitoramento.leitura())));
-
-                //listaDadosPic.Items.Add(monitoramento.leitura());
-
-
+                if (velocidade.Length > 0 && velocidade != "!")
+                {
+                    listaDadosPic.Invoke(new Action(() => listaDadosPic.Items.Add(velocidade)));
+                }
 
             }
         }
