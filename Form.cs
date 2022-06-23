@@ -17,6 +17,7 @@ namespace SupervisorFuzzyMicro
 
         char[] buffer = new char[1];
         char[] bufferCruzeiro = new char[1];
+        char[] bufferVelocidade = new char[7];
         public Form()
         {
             InitializeComponent();
@@ -171,6 +172,50 @@ namespace SupervisorFuzzyMicro
         private void elementHost1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
         {
 
+        }
+
+        private void btnEnvio_Click(object sender, EventArgs e)
+        {
+            
+            // Retoma a execucao do monitoramento
+            if ((portaSerial == null) || (!portaSerial.IsOpen))
+            {
+                return;
+            }
+
+            // Pega a velocidade digitada no campo
+            int valor = (int)numVelocidade.Value;
+            // multiplica por 40 para transformar em rpm
+            valor *= 40;
+            //converte em caractere
+            char first = (char)((valor >> 8) & 0xFF);
+            char second = (char)(valor & 0xFF);
+
+            //monta buffer com validacoes;
+            bufferVelocidade[0] = '#';
+            bufferVelocidade[1] = '$';
+            bufferVelocidade[2] = ':';
+
+            // envia velocidade 
+            bufferVelocidade[3] = first;
+            bufferVelocidade[4] = second;
+            bufferVelocidade[5] = '0';
+
+            char checksum = (char)0x00;
+            for (int index = 0; index < 6; index++)
+            {
+                checksum ^= bufferVelocidade[index];
+            }
+            bufferVelocidade[6] = checksum;
+
+            //portaSerial.Write(bufferVelocidade, 0, 6);
+
+
+            for (int i = 0; i < 7; i++)
+            {
+                portaSerial.Write(bufferVelocidade, i, 1);
+                Thread.Sleep(40);
+            }
         }
     }
 }

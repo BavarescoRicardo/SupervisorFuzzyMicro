@@ -57,12 +57,18 @@ namespace SupervisorFuzzyMicro
             this.tblPrin = new System.Windows.Forms.TabPage();
             this.tblInfo = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEnvio = new System.Windows.Forms.Button();
+            this.numVelocidade = new System.Windows.Forms.NumericUpDown();
             this.pnlLateral.SuspendLayout();
             this.pnlCentro.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tblPrin.SuspendLayout();
             this.tblInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numVelocidade)).BeginInit();
             this.SuspendLayout();
             // 
             // portaSerial
@@ -73,6 +79,7 @@ namespace SupervisorFuzzyMicro
             // pnlLateral
             // 
             this.pnlLateral.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlLateral.Controls.Add(this.panel1);
             this.pnlLateral.Controls.Add(this.btnMon);
             this.pnlLateral.Controls.Add(this.button11);
             this.pnlLateral.Controls.Add(this.button10);
@@ -88,7 +95,7 @@ namespace SupervisorFuzzyMicro
             this.pnlLateral.Controls.Add(this.btnInicio);
             this.pnlLateral.Location = new System.Drawing.Point(12, 23);
             this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(175, 415);
+            this.pnlLateral.Size = new System.Drawing.Size(175, 411);
             this.pnlLateral.TabIndex = 0;
             // 
             // btnMon
@@ -103,9 +110,9 @@ namespace SupervisorFuzzyMicro
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(3, 359);
+            this.button11.Location = new System.Drawing.Point(3, 266);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(165, 33);
+            this.button11.Size = new System.Drawing.Size(165, 26);
             this.button11.TabIndex = 11;
             this.button11.Text = "Parar";
             this.button11.UseVisualStyleBackColor = true;
@@ -113,9 +120,9 @@ namespace SupervisorFuzzyMicro
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(95, 310);
+            this.button10.Location = new System.Drawing.Point(95, 231);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(73, 37);
+            this.button10.Size = new System.Drawing.Size(73, 21);
             this.button10.TabIndex = 10;
             this.button10.Text = "0";
             this.button10.UseVisualStyleBackColor = true;
@@ -123,9 +130,9 @@ namespace SupervisorFuzzyMicro
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(3, 310);
+            this.button9.Location = new System.Drawing.Point(3, 231);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(73, 37);
+            this.button9.Size = new System.Drawing.Size(73, 21);
             this.button9.TabIndex = 9;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
@@ -133,9 +140,9 @@ namespace SupervisorFuzzyMicro
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(95, 258);
+            this.button8.Location = new System.Drawing.Point(95, 201);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(73, 37);
+            this.button8.Size = new System.Drawing.Size(73, 22);
             this.button8.TabIndex = 8;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
@@ -143,9 +150,9 @@ namespace SupervisorFuzzyMicro
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(3, 258);
+            this.button7.Location = new System.Drawing.Point(3, 201);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(73, 37);
+            this.button7.Size = new System.Drawing.Size(73, 22);
             this.button7.TabIndex = 7;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
@@ -153,9 +160,9 @@ namespace SupervisorFuzzyMicro
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(95, 211);
+            this.button6.Location = new System.Drawing.Point(95, 165);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(73, 37);
+            this.button6.Size = new System.Drawing.Size(73, 23);
             this.button6.TabIndex = 6;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
@@ -163,9 +170,9 @@ namespace SupervisorFuzzyMicro
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(3, 211);
+            this.button5.Location = new System.Drawing.Point(3, 165);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(73, 37);
+            this.button5.Size = new System.Drawing.Size(73, 23);
             this.button5.TabIndex = 5;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
@@ -173,9 +180,9 @@ namespace SupervisorFuzzyMicro
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(95, 159);
+            this.button4.Location = new System.Drawing.Point(95, 130);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(73, 37);
+            this.button4.Size = new System.Drawing.Size(73, 23);
             this.button4.TabIndex = 4;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
@@ -183,9 +190,9 @@ namespace SupervisorFuzzyMicro
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 159);
+            this.button3.Location = new System.Drawing.Point(3, 130);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(73, 37);
+            this.button3.Size = new System.Drawing.Size(73, 23);
             this.button3.TabIndex = 3;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
@@ -193,9 +200,9 @@ namespace SupervisorFuzzyMicro
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(95, 105);
+            this.button2.Location = new System.Drawing.Point(95, 94);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 37);
+            this.button2.Size = new System.Drawing.Size(73, 29);
             this.button2.TabIndex = 2;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
@@ -203,9 +210,9 @@ namespace SupervisorFuzzyMicro
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 105);
+            this.button1.Location = new System.Drawing.Point(3, 94);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 37);
+            this.button1.Size = new System.Drawing.Size(73, 29);
             this.button1.TabIndex = 1;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
@@ -215,7 +222,7 @@ namespace SupervisorFuzzyMicro
             // 
             this.btnInicio.Location = new System.Drawing.Point(3, 50);
             this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(165, 33);
+            this.btnInicio.Size = new System.Drawing.Size(165, 27);
             this.btnInicio.TabIndex = 0;
             this.btnInicio.Text = "Iniciar";
             this.btnInicio.UseVisualStyleBackColor = true;
@@ -318,6 +325,50 @@ namespace SupervisorFuzzyMicro
             this.chart1.TabIndex = 0;
             this.chart1.Text = "Velocidades";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.numVelocidade);
+            this.panel1.Controls.Add(this.btnEnvio);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(4, 324);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(168, 84);
+            this.panel1.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Enviar Velocidade";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnEnvio
+            // 
+            this.btnEnvio.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnEnvio.Location = new System.Drawing.Point(21, 58);
+            this.btnEnvio.Name = "btnEnvio";
+            this.btnEnvio.Size = new System.Drawing.Size(114, 23);
+            this.btnEnvio.TabIndex = 2;
+            this.btnEnvio.Text = "Enviar";
+            this.btnEnvio.UseVisualStyleBackColor = false;
+            this.btnEnvio.Click += new System.EventHandler(this.btnEnvio_Click);
+            // 
+            // numVelocidade
+            // 
+            this.numVelocidade.Location = new System.Drawing.Point(11, 32);
+            this.numVelocidade.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.numVelocidade.Name = "numVelocidade";
+            this.numVelocidade.Size = new System.Drawing.Size(106, 20);
+            this.numVelocidade.TabIndex = 2;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,6 +384,8 @@ namespace SupervisorFuzzyMicro
             this.tblPrin.ResumeLayout(false);
             this.tblInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numVelocidade)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,6 +415,10 @@ namespace SupervisorFuzzyMicro
         private System.Windows.Forms.TabPage tblPrin;
         private System.Windows.Forms.TabPage tblInfo;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnEnvio;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numVelocidade;
     }
 }
 
