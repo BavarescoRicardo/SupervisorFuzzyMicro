@@ -48,7 +48,7 @@ namespace SupervisorFuzzyMicro
             this.btnInicio = new System.Windows.Forms.Button();
             this.pnlCentro = new System.Windows.Forms.Panel();
             this.btnSet = new System.Windows.Forms.Button();
-            this.btnAumenta = new System.Windows.Forms.Button();
+            this.btnRes = new System.Windows.Forms.Button();
             this.listaDadosPic = new System.Windows.Forms.ListBox();
             this.pnlLateral.SuspendLayout();
             this.pnlCentro.SuspendLayout();
@@ -216,7 +216,7 @@ namespace SupervisorFuzzyMicro
             this.pnlCentro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pnlCentro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlCentro.BackgroundImage")));
             this.pnlCentro.Controls.Add(this.btnSet);
-            this.pnlCentro.Controls.Add(this.btnAumenta);
+            this.pnlCentro.Controls.Add(this.btnRes);
             this.pnlCentro.Controls.Add(this.listaDadosPic);
             this.pnlCentro.Location = new System.Drawing.Point(193, 23);
             this.pnlCentro.Name = "pnlCentro";
@@ -229,17 +229,19 @@ namespace SupervisorFuzzyMicro
             this.btnSet.Name = "btnSet";
             this.btnSet.Size = new System.Drawing.Size(75, 23);
             this.btnSet.TabIndex = 3;
-            this.btnSet.Text = "Definir";
+            this.btnSet.Text = "Set-";
             this.btnSet.UseVisualStyleBackColor = true;
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
             // 
-            // btnAumenta
+            // btnRes
             // 
-            this.btnAumenta.Location = new System.Drawing.Point(45, 83);
-            this.btnAumenta.Name = "btnAumenta";
-            this.btnAumenta.Size = new System.Drawing.Size(75, 23);
-            this.btnAumenta.TabIndex = 2;
-            this.btnAumenta.Text = "Aumenta";
-            this.btnAumenta.UseVisualStyleBackColor = true;
+            this.btnRes.Location = new System.Drawing.Point(45, 83);
+            this.btnRes.Name = "btnRes";
+            this.btnRes.Size = new System.Drawing.Size(75, 23);
+            this.btnRes.TabIndex = 2;
+            this.btnRes.Text = "Res+";
+            this.btnRes.UseVisualStyleBackColor = true;
+            this.btnRes.Click += new System.EventHandler(this.btnRes_Click);
             // 
             // listaDadosPic
             // 
@@ -287,7 +289,7 @@ namespace SupervisorFuzzyMicro
         private System.Windows.Forms.ListBox listaDadosPic;
         private System.Windows.Forms.Button btnMon;
         private System.Windows.Forms.Button btnSet;
-        private System.Windows.Forms.Button btnAumenta;
+        private System.Windows.Forms.Button btnRes;
     }
 }
 

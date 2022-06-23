@@ -16,6 +16,7 @@ namespace SupervisorFuzzyMicro
         Monitoramento monitoramento = new Monitoramento();
 
         char[] buffer = new char[1];
+        char[] bufferCruzeiro = new char[1];
         public Form()
         {
             InitializeComponent();
@@ -150,5 +151,16 @@ namespace SupervisorFuzzyMicro
             }
         }
 
+        private void btnRes_Click(object sender, EventArgs e)
+        {
+            bufferCruzeiro = new char[] { 'R' };
+            portaSerial.Write(bufferCruzeiro, 0, 1);
+        }
+
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            bufferCruzeiro = new char[] { 'S' };
+            portaSerial.Write(bufferCruzeiro, 0, 1);
+        }
     }
 }
