@@ -125,6 +125,9 @@ namespace SupervisorFuzzyMicro
 
         private void btnMon_Click(object sender, EventArgs e)
         {
+            chart1.ChartAreas[0].AxisX.Maximum = 500;
+            chart1.ChartAreas[0].AxisY.Maximum = 220;
+
             monitoramento.abrePorta(portaSerial);
             monitoramento.iniciaGrafico(chart1);
             // dispara uma nova thread para executar

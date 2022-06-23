@@ -54,7 +54,12 @@ namespace SupervisorFuzzyMicro
                 mensagem = "Velocidade Atual: " + velocidade.ToString() + " Setado: " + setado.ToString();
 
                 grafico.Invoke(new Action(() =>
-                    grafico.Series["Series1"].Points.AddXY(grafico.Series["Series1"].Points.Count, velocidade)));
+                    grafico.Series["Velocidade"].Points.AddXY(grafico.Series["Velocidade"].Points.Count, velocidade)));
+
+                if (grafico.Series["Velocidade"].Points.Count > 498)
+                {
+                    grafico.Invoke(new Action(() => grafico.Series["Velocidade"].Points.Clear()));
+                }
                 return mensagem;
             }
 

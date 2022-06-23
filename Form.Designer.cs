@@ -299,6 +299,10 @@ namespace SupervisorFuzzyMicro
             // 
             // chart1
             // 
+            this.chart1.BackColor = System.Drawing.Color.Gainsboro;
+            this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            this.chart1.BackImageTransparentColor = System.Drawing.Color.Snow;
+            this.chart1.BackSecondaryColor = System.Drawing.Color.Snow;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -308,7 +312,7 @@ namespace SupervisorFuzzyMicro
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Velocidade";
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(596, 323);
             this.chart1.TabIndex = 0;
