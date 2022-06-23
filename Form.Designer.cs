@@ -50,8 +50,13 @@ namespace SupervisorFuzzyMicro
             this.btnSet = new System.Windows.Forms.Button();
             this.btnRes = new System.Windows.Forms.Button();
             this.listaDadosPic = new System.Windows.Forms.ListBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tblPrin = new System.Windows.Forms.TabPage();
+            this.tblInfo = new System.Windows.Forms.TabPage();
             this.pnlLateral.SuspendLayout();
             this.pnlCentro.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tblPrin.SuspendLayout();
             this.SuspendLayout();
             // 
             // portaSerial
@@ -218,7 +223,7 @@ namespace SupervisorFuzzyMicro
             this.pnlCentro.Controls.Add(this.btnSet);
             this.pnlCentro.Controls.Add(this.btnRes);
             this.pnlCentro.Controls.Add(this.listaDadosPic);
-            this.pnlCentro.Location = new System.Drawing.Point(193, 23);
+            this.pnlCentro.Location = new System.Drawing.Point(1, 6);
             this.pnlCentro.Name = "pnlCentro";
             this.pnlCentro.Size = new System.Drawing.Size(595, 347);
             this.pnlCentro.TabIndex = 1;
@@ -254,17 +259,50 @@ namespace SupervisorFuzzyMicro
             this.listaDadosPic.Size = new System.Drawing.Size(296, 225);
             this.listaDadosPic.TabIndex = 0;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tblPrin);
+            this.tabControl1.Controls.Add(this.tblInfo);
+            this.tabControl1.Location = new System.Drawing.Point(196, 23);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(616, 415);
+            this.tabControl1.TabIndex = 2;
+            // 
+            // tblPrin
+            // 
+            this.tblPrin.Controls.Add(this.pnlCentro);
+            this.tblPrin.Location = new System.Drawing.Point(4, 22);
+            this.tblPrin.Name = "tblPrin";
+            this.tblPrin.Padding = new System.Windows.Forms.Padding(3);
+            this.tblPrin.Size = new System.Drawing.Size(608, 389);
+            this.tblPrin.TabIndex = 0;
+            this.tblPrin.Text = "Principal";
+            this.tblPrin.UseVisualStyleBackColor = true;
+            // 
+            // tblInfo
+            // 
+            this.tblInfo.Location = new System.Drawing.Point(4, 22);
+            this.tblInfo.Name = "tblInfo";
+            this.tblInfo.Padding = new System.Windows.Forms.Padding(3);
+            this.tblInfo.Size = new System.Drawing.Size(608, 389);
+            this.tblInfo.TabIndex = 1;
+            this.tblInfo.Text = "Informações";
+            this.tblInfo.UseVisualStyleBackColor = true;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pnlCentro);
+            this.ClientSize = new System.Drawing.Size(824, 450);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pnlLateral);
             this.Name = "Form";
             this.Text = "Form1";
             this.pnlLateral.ResumeLayout(false);
             this.pnlCentro.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tblPrin.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -290,6 +328,9 @@ namespace SupervisorFuzzyMicro
         private System.Windows.Forms.Button btnMon;
         private System.Windows.Forms.Button btnSet;
         private System.Windows.Forms.Button btnRes;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tblPrin;
+        private System.Windows.Forms.TabPage tblInfo;
     }
 }
 
