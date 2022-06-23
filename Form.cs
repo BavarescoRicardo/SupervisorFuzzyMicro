@@ -114,7 +114,7 @@ namespace SupervisorFuzzyMicro
             // Pega a velocidade digitada no campo
             int valor = (int)numVelocidade.Value;
             // multiplica por 40 para transformar em rpm
-            valor *= 40;
+            valor *= 42;
             //converte em caractere
             char first = (char)((valor >> 8) & 0xFF);
             char second = (char)(valor & 0xFF);
