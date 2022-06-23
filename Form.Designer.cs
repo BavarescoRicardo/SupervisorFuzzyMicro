@@ -31,6 +31,9 @@ namespace SupervisorFuzzyMicro
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.portaSerial = new System.IO.Ports.SerialPort(this.components);
             this.pnlLateral = new System.Windows.Forms.Panel();
             this.btnMon = new System.Windows.Forms.Button();
@@ -53,10 +56,13 @@ namespace SupervisorFuzzyMicro
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tblPrin = new System.Windows.Forms.TabPage();
             this.tblInfo = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlLateral.SuspendLayout();
             this.pnlCentro.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tblPrin.SuspendLayout();
+            this.tblInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // portaSerial
@@ -282,6 +288,7 @@ namespace SupervisorFuzzyMicro
             // 
             // tblInfo
             // 
+            this.tblInfo.Controls.Add(this.chart1);
             this.tblInfo.Location = new System.Drawing.Point(4, 22);
             this.tblInfo.Name = "tblInfo";
             this.tblInfo.Padding = new System.Windows.Forms.Padding(3);
@@ -289,6 +296,23 @@ namespace SupervisorFuzzyMicro
             this.tblInfo.TabIndex = 1;
             this.tblInfo.Text = "Informações";
             this.tblInfo.UseVisualStyleBackColor = true;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(6, 28);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(596, 323);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "Velocidades";
             // 
             // Form
             // 
@@ -303,6 +327,8 @@ namespace SupervisorFuzzyMicro
             this.pnlCentro.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tblPrin.ResumeLayout(false);
+            this.tblInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,6 +357,7 @@ namespace SupervisorFuzzyMicro
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tblPrin;
         private System.Windows.Forms.TabPage tblInfo;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 

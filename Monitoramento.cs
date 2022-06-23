@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace SupervisorFuzzyMicro
 {
@@ -11,9 +12,15 @@ namespace SupervisorFuzzyMicro
         int setado;
         String mensagem;
         SerialPort portaS;
+        Chart grafico;
         public void abrePorta(SerialPort portaSe)
         {
             this.portaS = portaSe;
+        }
+
+        public void iniciaGrafico(Chart grafico)
+        {
+            this.grafico = grafico;
         }
         public String leitura()
         {
@@ -45,6 +52,9 @@ namespace SupervisorFuzzyMicro
                 setado = (buffer[6] << 8) + (buffer[7]);
 
                 mensagem = "Velocidade Atual: " + velocidade.ToString() + " Setado: " + setado.ToString();
+
+                grafico.Invoke(new Action(() =>
+                    grafico.Series["Series1"].Points.AddXY(grafico.Series["Series1"].Points.Count, velocidade)));
                 return mensagem;
             }
 

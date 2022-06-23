@@ -126,9 +126,11 @@ namespace SupervisorFuzzyMicro
         private void btnMon_Click(object sender, EventArgs e)
         {
             monitoramento.abrePorta(portaSerial);
+            monitoramento.iniciaGrafico(chart1);
             // dispara uma nova thread para executar
             Thread t = new Thread(printaLista);
             t.Start();
+
         }
 
         private void printaLista()
@@ -161,6 +163,11 @@ namespace SupervisorFuzzyMicro
         {
             bufferCruzeiro = new char[] { 'S' };
             portaSerial.Write(bufferCruzeiro, 0, 1);
+        }
+
+        private void elementHost1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+        {
+
         }
     }
 }
