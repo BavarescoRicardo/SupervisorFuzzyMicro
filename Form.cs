@@ -34,78 +34,6 @@ namespace SupervisorFuzzyMicro
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (portaSerial.IsOpen)
-            {
-                portaSerial.Write("1");
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (portaSerial.IsOpen)
-            {
-                portaSerial.Write("2");
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (portaSerial.IsOpen)
-            {
-                portaSerial.Write("3");
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (portaSerial.IsOpen)
-            {
-                portaSerial.Write("4");
-            }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (portaSerial.IsOpen)
-            {
-                portaSerial.Write("5");
-            }
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if (portaSerial.IsOpen)
-            {
-                portaSerial.Write("6");
-            }
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            if (portaSerial.IsOpen)
-            {
-                portaSerial.Write("7");
-            }
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            if (portaSerial.IsOpen)
-            {
-                portaSerial.Write("8");
-            }
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            if (portaSerial.IsOpen)
-            {
-                portaSerial.Write("9");
-            }
-        }
-
         private void button10_Click(object sender, EventArgs e)
         {
             if (portaSerial.IsOpen)
@@ -206,7 +134,7 @@ namespace SupervisorFuzzyMicro
             {
                 checksum ^= bufferVelocidade[index];
             }
-            bufferVelocidade[6] = checksum;
+            bufferVelocidade[6] = 'X';
 
             //portaSerial.Write(bufferVelocidade, 0, 6);
 
@@ -214,7 +142,7 @@ namespace SupervisorFuzzyMicro
             for (int i = 0; i < 7; i++)
             {
                 portaSerial.Write(bufferVelocidade, i, 1);
-                Thread.Sleep(40);
+                Thread.Sleep(30);
             }
         }
     }
